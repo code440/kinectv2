@@ -1,3 +1,7 @@
+
+apt update && apt install ros-$ROS_DISTRO-pcl-conversions
+
+
 # 
 https://pcl.readthedocs.io/projects/tutorials/en/latest/correspondence_grouping.html#correspondence-grouping
 
