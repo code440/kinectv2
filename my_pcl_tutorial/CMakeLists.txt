@@ -135,27 +135,14 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/my_pcl_tutorial_node.cpp)
-#add_executable(example src/example.cpp)
+add_executable(example src/example.cpp)
+target_link_libraries(example ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
 add_executable(example_voxelgrid src/example_voxelgrid.cpp)
+target_link_libraries(example_voxelgrid ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
-## Rename C++ executable without prefix
-## The above recommended prefix causes long target names, the following renames the
-## target back to the shorter version for ease of user use
-## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
-# set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
-
-## Add cmake target dependencies of the executable
-## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-## Specify libraries to link a library or executable target against
-target_link_libraries(example_voxelgrid
-  ${catkin_LIBRARIES}
-)
-#target_link_libraries(example 
-#  ${catkin_LIBRARIES}
-#)
-
+add_executable (correspondence_grouping src/correspondence_grouping.cpp)
+target_link_libraries (correspondence_grouping ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
 #############
 ## Install ##
